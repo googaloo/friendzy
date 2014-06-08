@@ -11,7 +11,17 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', function() {
 	return View::make('hello');
+});
+
+Route::resource('rooms', 'RoomsController');
+Route::get('tester', function() {
+	return View::make('users/users');
+});
+
+Route::get('user/{user}', function($user) {
+
+	return 'sup, ' . $user;
+
 });
